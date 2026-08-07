@@ -98,7 +98,7 @@
 
         /* CONTENEDOR CENTRAL DE LA PÁGINA */
         .container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 0 auto;
             width: 100%;
             padding: 0 1.5rem 3rem 1.5rem;
@@ -124,15 +124,9 @@
             color: var(--accent-red);
         }
 
-        .manifesto {
-            font-size: 1.2rem;
-            color: var(--off-white);
-            max-width: 650px;
-            opacity: 0.9;
-        }
-
         /* Three Pillars (Zeros) */
         .pillars {
+            font-style: italic;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.25rem;
@@ -222,7 +216,7 @@
             .brand-logo-img { height: 32px; }
             h1 { font-size: 2.1rem; }
             .pillars { grid-template-columns: 1fr; }
-            footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            footer { flex-direction: row !important; gap: 1rem; align-items: flex-start; }
         }
     </style>
 </head>
@@ -250,24 +244,18 @@
     <div class="container">
         <!-- Main Hero -->
         <section class="hero">
-            <h1>Built by creators.<br><span>Zero corporate bloat.</span></h1>
-            <p class="manifesto">
-                Lightweight DSP tools and audio resources crafted for speed, privacy, and organic sound. From underground to underground.
-            </p>
+            <h1>indie-to-indie. <span>no corporate bloat.</span></h1>
         </section>
 
         <!-- The 3 Pillars -->
         <section class="pillars">
             <div class="pillar-card">
-                <h3>Privacy First</h3>
                 <p>Zero Registration</p>
             </div>
             <div class="pillar-card">
-                <h3>Ownership</h3>
                 <p>Zero Subscription</p>
             </div>
             <div class="pillar-card">
-                <h3>Offline Power</h3>
                 <p>Zero Cloud</p>
             </div>
         </section>
