@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENOS RUIDO | Indie-to-Indie</title>
+    
+    <!-- Favicon Integration -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <!-- GoatCounter -->
+    <script data-goatcounter="https://menosruido.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #191919;
+            --panel-bg: #1F1F1F;
+            --accent-red: #B72B0E;
+            --off-white: #F6F4F0;
+            --muted-text: #888888;
+            --border-color: #2D2D2D;
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--off-white);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* BANNER FULL WIDTH (Fuera de la retícula central) */
+        header.banner {
+            width: 100%;
+            background-color: var(--bg-color);
+            border-bottom: 2px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .banner-inner {
+            max-width: 1100px; /* Un poco más amplio para el banner que el cuerpo */
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .brand-logo-img {
+            height: 55px; /* Ajuste fino de escala */
+            width: auto;
+            display: block;
+        }
+
+        .tagline-badge {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent-red);
+            border: 1px solid var(--accent-red);
+            padding: 0.35rem 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            white-space: nowrap;
+        }
+
+        .cart-btn {
+            background: transparent;
+            border: none;
+            color: var(--off-white);
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease, transform 0.1s ease;
+        }
+
+        .cart-btn:hover {
+            color: var(--accent-red);
+        }
+
+        /* CONTENEDOR CENTRAL DE LA PÁGINA */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1.5rem 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 3.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            color: var(--accent-red);
+        }
+
+        .manifesto {
+            font-size: 1.2rem;
+            color: var(--off-white);
+            max-width: 650px;
+            opacity: 0.9;
+        }
+
+        /* Three Pillars (Zeros) */
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .pillar-card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent-red);
+        }
+
+        .pillar-card h3 {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .pillar-card p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--off-white);
+        }
+
+        /* Product Preview Box (Placeholder for VST) */
+        .product-box {
+            border: 2px dashed var(--border-color);
+            padding: 3rem 2rem;
+            text-align: center;
+            background-color: rgba(31, 31, 31, 0.4);
+            margin-bottom: 4rem;
+        }
+
+        .product-box h2 {
+            font-family: var(--font-mono);
+            font-size: 1.35rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .product-box p {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: var(--off-white);
+            font-family: var(--font-mono);
+            font-weight: bold;
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #d4381c;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--muted-text);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header.banner { padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
+            .banner-inner { flex-direction: column; align-items: flex-start; gap: 1rem; }
+            .brand-logo-img { height: 38px; }
+            h1 { font-size: 2.1rem; }
+            .pillars { grid-template-columns: 1fr; }
+            footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Banner a ancho completo -->
+    <header class="banner">
+        <div class="banner-inner">
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="MENOS RUIDO™" class="brand-logo-img">
+            </a>
+            
+            <!-- Carrito SVG (Placeholder interactivo) -->
+            <button class="cart-btn" aria-label="Cart">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Main Hero -->
+        <section class="hero">
+            <h1>Built by creators.<br><span>Zero corporate bloat.</span></h1>
+            <p class="manifesto">
+                Lightweight DSP tools and audio resources crafted for speed, privacy, and organic sound. From underground to underground.
+            </p>
+        </section>
+
+        <!-- The 3 Pillars -->
+        <section class="pillars">
+            <div class="pillar-card">
+                <h3>Privacy First</h3>
+                <p>Zero Registration</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Ownership</h3>
+                <p>Zero Subscription</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Offline Power</h3>
+                <p>Zero Cloud</p>
+            </div>
+        </section>
+
+        <!-- Product Callout / Placeholder -->
+        <section class="product-box">
+            <h2>FLAGSHIP DSP UTILITY [VST3 / AU]</h2>
+            <p>Under 1% CPU usage. Offline .lic license. No background daemons.</p>
+            <button class="cta-button">Development in Progress</button>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div>© 2026 MENOS RUIDO™</div>
+            <div>Guatemala City</div>
+        </footer>
+    </div>
+
+</body>
+</html>
