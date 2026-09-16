@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENOS RUIDO | Indie-to-Indie</title>
+    
+    <!-- Favicon Integration -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://menosruido.store/assets/favicon.png">
+    <link rel="apple-touch-icon" href="https://menosruido.store/assets/favicon.png">
+
+    <!-- GoatCounter -->
+    <script data-goatcounter="https://menosruido.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #191919;
+            --panel-bg: #1F1F1F;
+            --accent-red: #B72B0E;
+            --off-white: #F6F4F0;
+            --muted-text: #888888;
+            --border-color: #2D2D2D;
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--off-white);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* BANNER FULL WIDTH */
+        header.banner {
+            width: 100%;
+            background-color: var(--bg-color);
+            border-bottom: 2px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .banner-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-link:hover {
+            transform: translateY(-1px);
+        }
+
+        .brand-logo-img {
+            height: 55px;
+            width: auto;
+            display: block;
+        }
+
+        .cart-btn {
+            background: transparent;
+            border: none;
+            color: var(--off-white);
+            cursor: pointer;
+            padding: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.2s ease, transform 0.1s ease;
+        }
+
+        .cart-btn:hover {
+            color: var(--accent-red);
+        }
+
+        /* CONTENEDOR CENTRAL DE LA PÁGINA */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 1.5rem 3rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: 3.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.5px;
+        }
+
+        h1 span {
+            color: var(--accent-red);
+        }
+
+        .text-box h2 {
+            font-family: var(--font-sans);
+            font-size: 2.8rem;
+            font-weight: 100;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            transition: color 0.25s ease;
+        }
+
+        /* Projects Section */
+        .projects {
+            margin-bottom: 4rem;
+        }
+
+        .projects h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Product Box Clickable/Hover */
+        a.product-box {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border: 2px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            text-align: left;
+            background-color: var(--bg-color);
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+        }
+
+        a.product-box:hover {
+            border-color: var(--accent-red);
+            box-shadow: 0 0 25px rgba(183, 43, 14, 0.15);
+            background-color: rgba(183, 43, 14, 0.04);
+            transform: translateY(-2px);
+        }
+
+        a.product-box:hover h2 {
+            color: var(--accent-red);
+        }
+
+        .product-box h2 {
+            font-family: var(--font-sans);
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.25s ease;
+        }
+
+        .arrow {
+            font-family: var(--font-mono);
+            font-size: 2rem;
+            transition: transform 0.25s ease, color 0.25s ease;
+            color: var(--muted-text);
+        }
+
+        a.product-box:hover .arrow {
+            transform: translateX(8px);
+            color: var(--accent-red);
+        }
+
+        .product-box p {
+            color: var(--muted-text);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            font-weight: 100;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--muted-text);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header.banner { padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
+            .banner-inner { flex-direction: row !important; align-items: flex-start; gap: 1rem; }
+            .brand-logo-img { height: 32px; }
+            h1 { font-size: 2.1rem; }
+            .product-box h2 { font-size: 1.6rem; }
+            footer { flex-direction: row !important; gap: 1rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Banner -->
+    <header class="banner">
+        <div class="banner-inner">
+            <a href="#" class="logo-link">
+                <img src="https://menosruido.store/assets/logo.png" alt="MENOS RUIDO™" class="brand-logo-img">
+            </a>
+            
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Main Hero -->
+        <section class="hero">
+            <h1><span>about us.</span></h1>
+            <div class="text-box">
+                <h2>hola, hope you find any usage for this projects.</h2>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <h1>our projects.</h1>
+            
+            <a href="sofia.html" class="product-box">
+                <h2>SOFIA: LOCAL LLM HARNESS <span class="arrow">---></span></h2>
+                <p>Stand-alone environment harness for local LLM workflows.</p>
+            </a>
+
+            <a href="trasher.html" class="product-box">
+                <h2>TRASHER: CROSS-PLATFORM CLI TOOL <span class="arrow">---></span></h2>
+                <p>Built to wipe build artifacts, deep-purge environment caches, and empty system trash in one command.</p>
+            </a>
+
+            <a href="fig.html" class="product-box">
+                <h2>FIG: SMART WALLET <span class="arrow">---></span></h2>
+                <p>Mobile app for financial organization.</p>
+            </a>
+
+            <a href="umul.html" class="product-box">
+                <h2>UMUL: SIMPLIFIED RENTALS <span class="arrow">---></span></h2>
+                <p>Network design to connect renters and landlords in a simple and safe environment.</p>
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div>© 2026 MENOS RUIDO™</div>
+            <div>from Guatemala City ♥</div>
+        </footer>
+    </div>
+
+</body>
+</html>
