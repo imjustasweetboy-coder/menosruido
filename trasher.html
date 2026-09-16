@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MENOS RUIDO™</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #0f0f11;
+            color: #f4f4f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Banner */
+        .banner {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            background-color: #0f0f11;
+            border-bottom: 1px solid #1c1c21;
+        }
+        .banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        .brand-logo-img {
+            height: 32px;
+            width: auto;
+            display: block;
+        }
+
+        /* Contenido Principal */
+        .container {
+            flex: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero {
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.025em;
+        }
+        .btn-action {
+            display: inline-block;
+            background-color: #f4f4f5;
+            color: #0f0f11;
+            padding: 0.85rem 2rem;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+        }
+        .btn-action:hover {
+            opacity: 0.9;
+        }
+        .btn-action:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Banner -->
+    <header class="banner">
+        <div class="banner-inner">
+            <a href="index.html" class="logo-link">
+                <img src="https://menosruido.store/assets/logo.png" alt="MENOS RUIDO™" class="brand-logo-img">
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="container">
+        <!-- Main Hero -->
+        <section class="hero">
+            <h1><span>hey, here's what you wanted</span></h1>
+            <div class="text-box">
+                <a href="https://github.com/imjustasweetboy-coder/trasher" target="_blank" rel="noopener noreferrer" class="btn-action">click here</a>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
