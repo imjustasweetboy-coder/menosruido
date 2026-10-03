@@ -9,20 +9,27 @@
     <link rel="icon" type="image/png" sizes="180x180" href="https://menosruido.store/assets/favicon.png">
     <link rel="apple-touch-icon" href="https://menosruido.store/assets/favicon.png">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <!-- GoatCounter -->
     <script data-goatcounter="https://menosruido.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
     <style>
         :root {
-            --bg-color: #191919;
-            --panel-bg: #1F1F1F;
+            --bg-color: #121212;
+            --panel-bg: #181818;
             --accent-red: #B72B0E;
+            --accent-red-glow: rgba(183, 43, 14, 0.25);
             --off-white: #F6F4F0;
-            --muted-text: #888888;
-            --border-color: #2D2D2D;
-            --font-mono: 'Courier New', Courier, monospace;
-            --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --muted-text: #8A8A8A;
+            --border-color: #262626;
+            --border-hover: #3E3E3E;
+            --font-mono: 'Fira Code', 'Courier New', monospace;
+            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
         }
 
         * {
@@ -33,24 +40,31 @@
 
         body {
             background-color: var(--bg-color);
-            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 30px 30px;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(183, 43, 14, 0.08), transparent 40%),
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 100% 100%, 32px 32px, 32px 32px;
             color: var(--off-white);
             font-family: var(--font-sans);
             line-height: 1.6;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* BANNER FULL WIDTH */
         header.banner {
             width: 100%;
-            background-color: var(--bg-color);
-            border-bottom: 2px solid var(--border-color);
-            padding: 1.5rem 2rem;
+            background-color: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(6px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 2rem;
             margin-bottom: 3.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         .banner-inner {
@@ -64,38 +78,23 @@
         .logo-link {
             display: inline-block;
             text-decoration: none;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, opacity 0.2s ease;
         }
 
         .logo-link:hover {
             transform: translateY(-1px);
+            opacity: 0.9;
         }
 
         .brand-logo-img {
-            height: 55px;
+            height: 48px;
             width: auto;
             display: block;
         }
 
-        .cart-btn {
-            background: transparent;
-            border: none;
-            color: var(--off-white);
-            cursor: pointer;
-            padding: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: color 0.2s ease, transform 0.1s ease;
-        }
-
-        .cart-btn:hover {
-            color: var(--accent-red);
-        }
-
         /* CONTENEDOR CENTRAL DE LA PÁGINA */
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             width: 100%;
             padding: 0 1.5rem 3rem 1.5rem;
@@ -109,25 +108,32 @@
             margin-bottom: 3.5rem;
         }
 
-        h1 {
-            font-size: 2.8rem;
+        .hero h1 {
+            font-size: 3.2rem;
             font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.5px;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            font-family: var(--font-sans);
         }
 
-        h1 span {
+        .hero h1 span {
             color: var(--accent-red);
+            position: relative;
         }
 
         .text-box h2 {
-            font-family: var(--font-sans);
-            font-size: 2.8rem;
-            font-weight: 100;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
-            transition: color 0.25s ease;
+            font-family: var(--font-mono);
+            font-size: 1.15rem;
+            font-weight: 400;
+            text-align: justify;
+            color: var(--off-white);
+            letter-spacing: -0.2px;
+            opacity: 0.9;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-red);
+            padding: 0.8rem 1.2rem;
+            border-radius: 0 6px 6px 0;
         }
 
         /* Projects Section */
@@ -135,8 +141,23 @@
             margin-bottom: 4rem;
         }
 
-        .projects h1 {
+        .projects-header {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted-text);
             margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .projects-header::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
         }
 
         /* Product Box Clickable/Hover */
@@ -144,57 +165,79 @@
             display: block;
             text-decoration: none;
             color: inherit;
-            border: 2px solid var(--border-color);
-            padding: 2.5rem 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
             text-align: left;
-            background-color: var(--bg-color);
-            margin-bottom: 1.5rem;
+            background-color: var(--panel-bg);
+            margin-bottom: 1.25rem;
             cursor: pointer;
             position: relative;
-            transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+            overflow: hidden;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        a.product-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--accent-red);
+            opacity: 0;
+            transition: opacity 0.25s ease;
         }
 
         a.product-box:hover {
             border-color: var(--accent-red);
-            box-shadow: 0 0 25px rgba(183, 43, 14, 0.15);
-            background-color: rgba(183, 43, 14, 0.04);
+            box-shadow: 0 8px 30px var(--accent-red-glow);
+            background-color: #211c1b;
             transform: translateY(-2px);
         }
 
-        a.product-box:hover h2 {
-            color: var(--accent-red);
+        a.product-box:hover::before {
+            opacity: 1;
         }
 
         .product-box h2 {
             font-family: var(--font-sans);
-            font-size: 2.8rem;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.5px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.3px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             transition: color 0.25s ease;
+            color: var(--off-white);
+        }
+
+        a.product-box:hover h2 {
+            color: var(--off-white);
         }
 
         .arrow {
             font-family: var(--font-mono);
-            font-size: 2rem;
+            font-size: 1.2rem;
             transition: transform 0.25s ease, color 0.25s ease;
             color: var(--muted-text);
+            font-weight: 400;
         }
 
         a.product-box:hover .arrow {
-            transform: translateX(8px);
+            transform: translateX(6px);
             color: var(--accent-red);
         }
 
         .product-box p {
             color: var(--muted-text);
             font-family: var(--font-mono);
-            font-size: 0.95rem;
-            font-weight: 100;
+            font-size: 0.9rem;
+            font-weight: 400;
+            line-height: 1.5;
             margin-bottom: 0;
+            max-width: 90%;
         }
 
         /* Footer */
@@ -210,14 +253,20 @@
             color: var(--muted-text);
         }
 
+        footer div:last-child {
+            color: var(--muted-text);
+        }
+
         /* Mobile Adjustments */
         @media (max-width: 600px) {
-            header.banner { padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
-            .banner-inner { flex-direction: row !important; align-items: flex-start; gap: 1rem; }
-            .brand-logo-img { height: 32px; }
-            h1 { font-size: 2.1rem; }
-            .product-box h2 { font-size: 1.6rem; }
-            footer { flex-direction: row !important; gap: 1rem; align-items: flex-start; }
+            header.banner { padding: 1rem 1.25rem; margin-bottom: 2rem; }
+            .brand-logo-img { height: 36px; }
+            .hero h1 { font-size: 2.3rem; }
+            .text-box h2 { font-size: 0.95rem; }
+            .product-box { padding: 1.5rem; }
+            .product-box h2 { font-size: 1.2rem; flex-direction: row; }
+            .product-box p { font-size: 0.85rem; max-width: 100%; }
+            footer { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
         }
     </style>
 </head>
@@ -229,7 +278,6 @@
             <a href="index" class="logo-link">
                 <img src="https://menosruido.store/assets/logo.png" alt="MENOS RUIDO™" class="brand-logo-img">
             </a>
-            
         </div>
     </header>
 
@@ -237,15 +285,15 @@
     <div class="container">
         <!-- Main Hero -->
         <section class="hero">
-            <h1><span>about us.</span></h1>
+            <h1><span>about us (or me).</span></h1>
             <div class="text-box">
-                <h2>hola, hope you find any usage for this projects.</h2>
+                <h2><p style="margin-bottom: 1.5rem;">hola, i'm a code enthusiast (though i'm trying to get some type of bachelor) from Guatemala, trying to shape a new generation of technology that is focused on a good user experience, respectig user's privacy and no unpayable fees, that's why i called it <b>MENOS RUIDO™</b> (<i>"less noise"</i> in Spanish). Please feel free to explore (it's only one page) and if you need any assistance, feel free to pray :).</p><p>now, without further ado, bienvenido to my personal blog (or whtever this is) and thanks for coming by.</p><p style="text-align: right; margin-top: 3rem; font-size: 1rem;"><i>- Marcus Gillespie [Founder & CEO] :p</i></p></h2>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section class="projects">
-            <h1>our projects.</h1>
+            <h1><span>our (dudosos) projects.</span></h1>
             
             <a href="sofia" class="product-box">
                 <h2>SOFIA: LOCAL LLM HARNESS <span class="arrow">---></span></h2>
