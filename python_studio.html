@@ -109,7 +109,7 @@
 
     <!-- Top Navigation Header -->
     <header class="h-16 bg-slate-900 border-b border-slate-800 px-4 md:px-6 flex items-center justify-between shrink-0">
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-0">
             <div class="flex items-center justify-center p-4">
                 <img src="https://menosruido.store/assets/favicon_py.png" alt="Logo oficial" class="w-[48px] h-[48px] object-contain"> 
             </div>
@@ -123,11 +123,6 @@
 
         <!-- Action Controls -->
         <div class="flex items-center gap-2 md:gap-3">
-            <!-- Engine Status Badge -->
-            <div id="status-badge" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 flex items-center gap-2">
-                <i class="fa-solid fa-spinner animate-spin-fast"></i>
-                <span id="status-text" class="hidden sm:inline">Cargando Pyodide...</span>
-            </div>
 
             <!-- Clear Console Button -->
             <button onclick="clearConsole()" class="px-3 py-2 text-sm rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-all flex items-center gap-2 border border-slate-700">
@@ -136,7 +131,7 @@
             </button>
 
             <!-- Execute Code Button -->
-            <button id="run-btn" onclick="runPythonCode()" disabled class="px-5 py-2 text-sm font-semibold rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 transition-all shadow-lg shadow-sky-500/20 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+            <button id="run-btn" onclick="runPythonCode()" disabled class="px-5 py-2 text-sm font-semibold rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                 <i class="fa-solid fa-play"></i>
                 <span>Ejecutar <span class="hidden lg:inline text-xs opacity-75">(Ctrl+Enter)</span></span>
             </button>
@@ -171,9 +166,6 @@
                     <i class="fa-solid fa-terminal text-emerald-400"></i>
                     <span>Consola de Salida</span>
                 </div>
-                <button onclick="clearConsole()" class="text-xs text-slate-500 hover:text-slate-300 transition-colors">
-                    <i class="fa-solid fa-rotate-left mr-1"></i>Reset
-                </button>
             </div>
             
             <!-- Output Console Container -->
@@ -242,9 +234,6 @@ if menos_ruido_es_genial:
                 });
 
                 // Update UI state once engine is active
-                statusBadge.className = "px-3 py-1.5 rounded-lg text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-2";
-                statusBadge.innerHTML = `<i class="fa-solid fa-circle-check"></i><span class="hidden sm:inline">Python Listo</span>`;
-                
                 runBtn.disabled = false;
                 outputEl.innerHTML = `<span class="text-emerald-400">⚡ Engine Python listo. Haz clic en "Ejecutar" o presiona Ctrl+Enter para probar código.</span>\n`;
             } catch (err) {
@@ -300,7 +289,7 @@ if menos_ruido_es_genial:
         // Clear console UI
         function clearConsole() {
             const outputEl = document.getElementById('output');
-            outputEl.innerHTML = `<span class="text-slate-500">[Consola limpiada]</span>\n`;
+            outputEl.innerHTML = `<span class="text-slate-500"></span>\n`;
         }
     </script>
 </body>
