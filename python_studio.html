@@ -235,7 +235,7 @@ if menos_ruido_es_genial:
 
                 // Update UI state once engine is active
                 runBtn.disabled = false;
-                outputEl.innerHTML = `<span class="text-emerald-400">⚡ Engine Python listo. Haz clic en "Ejecutar" o presiona Ctrl+Enter para probar código.</span>\n`;
+                outputEl.innerHTML = `<span class="text-emerald-400">⚡ Engine Python listo. Haz clic en <b><i>"Ejecutar"</i></b> o presiona <b><i>"Ctrl+Enter"</i></b> para probar código.</span>\n`;
             } catch (err) {
                 statusBadge.className = "px-3 py-1.5 rounded-lg text-xs font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20 flex items-center gap-2";
                 statusBadge.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i><span>Error al cargar</span>`;
