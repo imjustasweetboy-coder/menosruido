@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Vibe Studio - Dark & High Contrast Playground</title>
+    <title>Python Studio</title>
     
     <!-- Tailwind CSS for modern responsive layout -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -180,30 +180,12 @@
         let pyodideInstance = null;
 
         // Code sample provided by default
-        const initialCode = `# Vibe Coding Playground - Python 3.11+
-import math
+        const initialCode = `#Remember to share this tool with a friend if you're loving it :)
 
-class Developer:
-    def __init__(self, name, level):
-        self.name = name
-        self.level = level
-        self.skills = ["Python", "Vibe Coding", "Problem Solving"]
+menos_ruido_es_genial = True
 
-    def status(self):
-        return f"🔥 {self.name} está programando a nivel {self.level}!"
-
-# Instanciamos al programador
-dev = Developer("Coder", level=99)
-print(dev.status())
-
-print("\\n--- Probando Estructuras y Colores ---")
-numeros = [x ** 2 for x in range(1, 6)]
-print(f"Números al cuadrado: {numeros}")
-
-# Cálculo matemático rápido
-radio = 5.5
-area = math.pi * (radio ** 2)
-print(f"Área del círculo (r={radio}): {area:.2f}")
+if menos_ruido_es_genial:
+    print("Visit menosruido.store for more amazing tools!")
 `;
 
         // Initialize CodeMirror Editor with Dracula Theme
