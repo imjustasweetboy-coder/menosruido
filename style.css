@@ -32,15 +32,17 @@
 
 :root {
     --bg-color: #191919;
-    --bg-box: #2F2F2F;
     --off-white: #F6F4F0;
     --accent-red: #B72B0E;
+    --accent-purple: #9E4FB5;
     --muted-text: #8A8A8A;
     --font-mono: 'Buena-Mono', monospace;
     --font-sans: 'Sunghyun-Black', sans-serif;
     --font-cubao-reg: 'Cubao-Regular', sans-serif;
     --font-cubao-wide: 'Cubao-Wide', sans-serif;
     --font-cubao-narrow: 'Cubao-Narrow', sans-serif;
+    --color-brillo: rgba(183, 43, 14, 0.15);
+    --color-brillo2: rgba(158, 79, 181, 0.15);
 }
 
 .c-reg {font-family: var(--font-cubao-reg);}
@@ -117,6 +119,16 @@ body {
     flex-direction: column;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    background-image: 
+        radial-gradient(circle at top left, var(--color-brillo) 0%, transparent 20%),
+        radial-gradient(circle at top right, var(--color-brillo) 0%, transparent 20%),
+        radial-gradient(circle at top center, var(--color-brillo2) 0%, transparent 20%),
+        radial-gradient(circle at center left, var(--color-brillo) 0%, transparent 25%),
+        radial-gradient(circle at center right, var(--color-brillo) 0%, transparent 25%),
+        radial-gradient(circle at bottom left, var(--color-brillo) 0%, transparent 20%),
+        radial-gradient(circle at bottom right, var(--color-brillo) 0%, transparent 20%),
+        radial-gradient(circle at bottom center, var(--color-brillo2) 0%, transparent 20%);
+    background-repeat: no-repeat;
 }
 
 footer {
@@ -210,6 +222,18 @@ footer::before {
     margin-bottom: 8rem;
 }
 
+.boxes {
+    margin-top: -9rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0.5rem;
+    width: 100%;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
 .col-texto h1 {
     font-family: var(--font-sans);
     font-size: 3.2rem;
@@ -252,31 +276,77 @@ footer::before {
 }
 
 .text-box h1 {
-    margin-top: 0rem;
+    margin-top: 3rem;
     margin-left: 0.5rem;
     font-family: var(--font-mono);
     font-size: 18px;
-    font-weight: 150;
+    font-weight: 400;
     text-align: justify;
-    background-color: var(--bg-box);
+    background-color: rgba(47, 47, 47, 0.2);
     color: var(--off-white);
     padding: 1px 12px 1px 12px;
     border-radius: 8px;
+    border: 0.5px solid var(--muted-text);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .text-box h1 span {
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--accent-red);
 }
 
 .text-box h2 {
     margin-top: 0rem;
     margin-left: 0.5rem;
     font-family: var(--font-mono);
+    opacity: 0.7;
     font-style: italic;
     font-size: 15px;
     font-weight: 400;
     text-align: right;
     color: var(--off-white);
+}
+
+.text-box h2 span {
+    color: var(--accent-red);
+}
+
+a.product-box {
+    margin-top: 1.5rem;
+    font-size: 18px;
+    font-weight: 150;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 200px;
+    justify-content: space-between;
+    background-color: rgba(47, 47, 47, 0.2);
+    color: var(--off-white);
+    padding: 1px 12px 1px 12px;
+    border-radius: 8px;
+    border: 0.5px solid var(--muted-text);
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+}
+
+.product-box h1 {
+    font-family: var(--font-sans);
+}
+
+.product-box h1 span {
+    color: var(--accent-red);
+}
+
+.product-box h2 {
+    font-family: var(--font-mono);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.product-box:hover {
+    background-color: var(--accent-purple);
+    color: var(--bg-color);
+    transform: translateY(-8px);
 }
 
 .boton1 {
